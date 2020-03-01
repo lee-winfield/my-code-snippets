@@ -1,0 +1,38 @@
+{
+	// Place your snippets for go here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	"Golang Print Var": {
+		"prefix": "gopr",
+		"body": [
+			"fmt.Printf(\"${1:var}: %+v\\n\", $1)",
+			"$0"
+		],
+		"description": "Log output to console"
+	},
+	"Golang Table Test": {
+		"prefix": "gott",
+		"body": [
+			"func Test${1:FunctionName}(t *testing.T) {",
+			"\tassert := assert.New(t)",
+			"",
+			"\ttableTest := map[string]struct{",
+			"\t\texpected interface{}",
+			"\t\texpectedErr error",
+			"\t}{}",
+			"",
+			"\tfor title, test := range tableTest {",
+			"\t\tres, err := $1()",
+			"",
+			"\t\tassert.Equal(test.expectedErr, err, title)",
+			"\t\tif test.expectedErr != nil {",
+			"\t\t\tassert.Equal(test.expected, res, title)",
+			"\t\t}",
+			"\t}",
+			"}"
+		],
+		"description": "Log output to console"
+	}
+}
